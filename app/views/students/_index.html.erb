@@ -1,0 +1,25 @@
+<table>
+  <% @students.each do |student| %>
+    <tr>
+      <td>
+        <%= student.name %>
+      </td>
+      <td>
+        <% if student.sex %>
+          男性
+        <% else %>
+          女性
+        <% end %>
+      </td>
+      <td>
+        <%= student.age %>
+      </td>
+      <td>
+        <%= student.department.name %>
+      </td>
+      <td>
+        <%= student.subjects.map{|subject| subject.name}.join(', ') %>
+      </td>
+    </tr>
+  <% end %>
+</table>
